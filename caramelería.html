@@ -2,15 +2,15 @@
 <html lang="es-VE">
 <head>
     <meta charset="UTF-8">
-    <title>Cinex Unidos</title>
+    <title>Caramelería</title>
 </head>
 <body>
     <header align="center">
         <nav class="principal">
             <ul type="none">
                 <li><a href='#'> Cartelera </a></li>
-                <li><a href='#'> Próximanente </a></li>
-                <li><a href='#'> Caramelería </a></li>
+                <li><a href='proximamente.html'> Próximanente </a></li>
+                <li><a href='caramelería.html'> Caramelería </a></li>
                 <li><a href='#'> Cines </a></li>
             </ul>
         </nav>
@@ -26,47 +26,81 @@
         <section align="center">
             <H1> Menú </H1>
             <form id="buscador">
-                <input type="text" id="busqueda" class="buscar" placeholder="Buscar">
+                <input type="text" id="busqueda" class="buscar" placeholder="Buscar...">
                 <img src = "recursos/lupa.png" width="20" height="20"/>
             </form>
             <br>
-            <button name="golosinas"> Todos </button>
-            <button name="golosinas"> Promoción </button>
-            <button name="combos"> Combos </button>
-            <button name="bebidas"> Bebidas </button>
-            <button name="comidas"> Comidas </button>
-            <button name="golosinas"> Golosinas </button>
+            <ol class="filtros" type="none">
+                <li><a href='#'> Todos </a></li>
+                <li><a href='#'> Promoción </a></li>
+                <li><a href='#'> Combos </a></li>
+                <li><a href='#'> Bebidas </a></li>
+                <li><a href='#'> Comidas </a></li>
+                <li><a href='#'> Golosinas </a></li>
+            </ol>
         </section>
         <section class="items">
-            <figure class="item">
-                <img src="recursos/palomitas.webp" width="160" height="150" alt="palomitas">
+            <figure class="item comida">
+                <img src="recursos/palomitas.jpeg" width="260" height="180" alt="palomitas">
                 <figcaption>
-                    <h2>Palomitas</h2>
+                    <h2>Palomitas simples (grandes)</h2>
+                    <p>$5.99</p>
+                    <button class="agregar">+</button>
+                </figcaption>
+            </figure>
+            <figure class="item comida">
+                <img src="recursos/palomitas_medianas.jpeg" width="260" height="180" alt="palomitas">
+                <figcaption>
+                    <h2>Palomitas simples (medianas)</h2>
                     <p>$3.99</p>
                     <button class="agregar">+</button>
                 </figcaption>
             </figure>
-            <figure class="item">
-                <img src="recursos/hamburguesa.jpg" width="160" height="150" alt="hamburguesa">
+            <figure class="item comida">
+                <img src="recursos/palomitas_pequeñas.jpeg" width="260" height="180" alt="palomitas">
+                <figcaption>
+                    <h2>Palomitas simples (pequeñas)</h2>
+                    <p>$2.99</p>
+                    <button class="agregar">+</button>
+                </figcaption>
+            </figure>
+            <figure class="item comida">
+                <img src="recursos/hamburguesa.jpeg" width="260" height="180" alt="hamburguesa">
                 <figcaption>
                     <h2>Hamburguesa</h2>
                     <p>$8.99</p>
                     <button class="agregar">+</button>
                 </figcaption>
             </figure>
-            <figure class="item">
-                <img src="recursos/pollofrito" width="160" height="150" alt="pollofrito">
+            <figure class="item comida">
+                <img src="recursos/pollo.jpeg" width="280" height="180" alt="pollofrito">
                 <figcaption>
                     <h2>Pollo frito</h2>
-                    <p>$11.99</p>
+                    <p><s> $11.99 </s> $8.99 </p>
                     <button class="agregar">+</button>
                 </figcaption>
             </figure>
-            <figure class="item">
-                <img src="recursos/papas.jpg" width="160" height="150" alt="papas">
+            <figure class="item comida">
+                <img src="recursos/papas.jpeg" width="260" height="180" alt="papas">
                 <figcaption>
                     <h2>Papas fritas</h2>
-                    <p>$5.99</p>
+                    <p>$3.99</p>
+                    <button class="agregar">+</button>
+                </figcaption>
+            </figure>
+            <figure class="item combo">
+                <img src="recursos/combo_mediano.jpeg" width="260" height="180" alt="palomitas">
+                <figcaption>
+                    <h2>Palomitas + Refresco (grandes)</h2>
+                    <p>$6.99</p>
+                    <button class="agregar">+</button>
+                </figcaption>
+            </figure>
+            <figure class="item refresco">
+                <img src="recursos/refresco.jpeg" width="200" height="300" alt="palomitas">
+                <figcaption>
+                    <h2>Refresco (mediano)</h2>
+                    <p>$1.50</p>
                     <button class="agregar">+</button>
                 </figcaption>
             </figure>
