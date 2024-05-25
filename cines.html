@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+<head>
+    <meta charset="UTF-8">
+    <title>Cines</title>
+</head>
+<body>
+    <header>
+        <nav class="principal">
+            <ul>
+                <li><a href='cartelera.html'> Cartelera </a></li>
+                <li><a href='proximamente.html'> Próximanente </a></li>
+                <li><a href='caramelería.html'> Caramelería </a></li>
+                <li><a href='cines.html'> Cines </a></li>
+            </ul>
+        </nav>
+        <nav class="navegacion">
+            <ol>
+                <li><a href='#'> Cinex Unidos </a></li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <img src="recursos/ubicacion.png">
+            <h1> Ubicación </h1>
+            <form id="form">
+                <h3>Ciudad</h3>
+                <label for="ciudad"></label>
+                <select id="ciudad" name="ciudad">
+                    <option value="caracas" data-lat="10.48801" data-lng="-66.87919">Caracas, Venezuela</option>
+                </select>
+                <h3>Cine</h3>
+                <label for="cine"></label>
+                <select id="cine" name="cine">
+                    <option value="sambil" data-lat="10.496063" data-lng="-66.848509">Sambil Caracas</option>
+                </select><br>
+                <button class="boton"><img src="recursos/guardar.png" id="guardar" width="20" height="20">Guardar ubicación</button>
+            </form>
+        </section>
+        <section class="ubicacion">
+            <figure>
+                <figcaption>
+                    <h4>Ubicación</h4>
+                    <h5>Dirección</h5>
+                    <p>Av. Libertador, C.C. Sambil, Nivel Autopista, Plaza la Musica, Urb. Chacao.</p>
+                </figcaption>
+            </figure>
+        </section>
+    </main>
+    <footer id="footer">
+        <p>&copy; 2024 Cinex Unidos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -5,13 +5,13 @@
     <title>Caramelería</title>
 </head>
 <body>
-    <header align="center">
+    <header>
         <nav class="principal">
-            <ul type="none">
+            <ul>
                 <li><a href='cartelera.html'> Cartelera </a></li>
                 <li><a href='proximamente.html'> Próximanente </a></li>
                 <li><a href='caramelería.html'> Caramelería </a></li>
-                <li><a href='#'> Cines </a></li>
+                <li><a href='cines.html'> Cines </a></li>
             </ul>
         </nav>
         <nav class="navegacion">
@@ -21,13 +21,13 @@
         </nav>
     </header>
     <main>
-        <section align="center">
+        <section>
             <H1> Menú </H1>
             <form id="buscador">
                 <input type="text" id="busqueda" class="buscar" placeholder="Buscar...">
                 <img src = "recursos/lupa.png" width="20" height="20"/>
             </form>
-            <ol class="filtros" type="none">
+            <ol class="filtros">
                 <li><button><img src="recursos/regresar.png" width="20" height="20"></button></li>
                 <li><a href='#'> Todos </a></li>
                 <li><a href='#'> Promoción </a></li>
@@ -37,15 +37,15 @@
                 <li><a href='#'> Golosinas </a></li>
             </ol>
         </section>
-        <section align="right">
-            <header>
+        <aside>
+            <header id="carrito">
                 <h2>Pedido</h2>
             </header>
-            <ul type="none">
+            <ul type="none" class="pedidos">
                 <li>
-                    <figure class="item Pedido">
+                    <figure class="item pedido">
                         <img src="recursos/hamburguesa.jpeg" width="260" height="180" alt="hamburguesa">
-                        <figcaption>
+                        <figcaption class="descripcion">
                             <h2>Hamburguesa</h2>
                             <p>$8.99</p>
                             <label for="cantidad-popcorn">Cantidad:</label>
@@ -54,17 +54,15 @@
                     </figure>
                 </li>
             </ul>
-            <footer>
-                <div>
-                    <p>Total: $8.99</p>
-                    <button>Continuar</button>
-                </div>
+            <footer id="continuar">
+                <p>Total: $8.99</p>
+                <button>Continuar</button>
             </footer>
-        </section>
+        </aside>
         <section class="items">
             <figure class="item comida">
                 <img src="recursos/palomitas.jpeg" width="260" height="180" alt="palomitas">
-                <figcaption>
+                <figcaption class="descripcion">
                     <h2>Palomitas simples (grandes)</h2>
                     <p>$5.99</p>
                     <button class="agregar">+</button>
@@ -72,7 +70,7 @@
             </figure>
             <figure class="item comida">
                 <img src="recursos/palomitas_medianas.jpeg" width="260" height="180" alt="palomitas">
-                <figcaption>
+                <figcaption class="descripcion">
                     <h2>Palomitas simples (medianas)</h2>
                     <p>$3.99</p>
                     <button class="agregar">+</button>
@@ -80,7 +78,7 @@
             </figure>
             <figure class="item comida">
                 <img src="recursos/palomitas_pequeñas.jpeg" width="260" height="180" alt="palomitas">
-                <figcaption>
+                <figcaption class="descripcion">
                     <h2>Palomitas simples (pequeñas)</h2>
                     <p>$2.99</p>
                     <button class="agregar">+</button>
@@ -88,7 +86,7 @@
             </figure>
             <figure class="item comida">
                 <img src="recursos/hamburguesa.jpeg" width="260" height="180" alt="hamburguesa">
-                <figcaption>
+                <figcaption class="descripcion">
                     <h2>Hamburguesa</h2>
                     <p>$8.99</p>
                     <button class="agregar">+</button>
@@ -96,7 +94,7 @@
             </figure>
             <figure class="item comida">
                 <img src="recursos/pollo.jpeg" width="280" height="180" alt="pollofrito">
-                <figcaption>
+                <figcaption class="descripcion">
                     <h2>Pollo frito</h2>
                     <p><s> $11.99 </s> $8.99 </p>
                     <button class="agregar">+</button>
@@ -104,31 +102,39 @@
             </figure>
             <figure class="item comida">
                 <img src="recursos/papas.jpeg" width="260" height="180" alt="papas">
-                <figcaption>
+                <figcaption class="descripcion">
                     <h2>Papas fritas</h2>
                     <p>$3.99</p>
                     <button class="agregar">+</button>
                 </figcaption>
             </figure>
             <figure class="item combo">
-                <img src="recursos/combo_mediano.jpeg" width="260" height="180" alt="palomitas">
-                <figcaption>
+                <img src="recursos/combo_mediano.jpeg" width="260" height="180" alt="combo">
+                <figcaption class="descripcion">
                     <h2>Palomitas + Refresco (grandes)</h2>
                     <p>$6.99</p>
                     <button class="agregar">+</button>
                 </figcaption>
             </figure>
-            <figure class="item refresco">
-                <img src="recursos/refresco.jpeg" width="200" height="300" alt="palomitas">
-                <figcaption>
+            <figure class="item bebida">
+                <img src="recursos/refresco.jpeg" width="200" height="300" alt="bebida">
+                <figcaption class="descripcion">
                     <h2>Refresco (mediano)</h2>
                     <p>$1.50</p>
                     <button class="agregar">+</button>
                 </figcaption>
             </figure>
+            <figure class="item golosina">
+                <img src="recursos/chocolate.jpeg" width="200" height="200" alt="golosina">
+                <figcaption class="descripcion">
+                    <h2>Chocolate (pequeño)</h2>
+                    <p>$0.99</p>
+                    <button class="agregar">+</button>
+                </figcaption>
+            </figure>
         </section>
     </main>
-    <footer>
+    <footer id="footer">
         <p>&copy; 2024 Cinex Unidos. Todos los derechos reservados.</p>
     </footer>
 </body>
