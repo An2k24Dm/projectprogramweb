@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es-VE">
+    <head>
+        <meta charset="UTF-8">
+        <title>Caramelería</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navegacion">
+                <h1>
+                    <a href="cartelera.html"> Cinex Unidos</a>
+                </h1>
+            </nav>
+            <nav class="regresar">
+                <a href="asientos.html"><button>
+                    <img src="recursos/regresar.png" width="20" height="20">
+                </button></a>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h1>Menú</h1>
+                <form id="buscador">
+                    <input
+                        type="text"
+                        id="busqueda"
+                        class="buscar"
+                        placeholder="Buscar..."
+                    >
+                    <img src="recursos/lupa.png" width="20" height="20">
+                </form>
+                <ol class="filtros">
+                    <li>
+                        <a href="#"> Todos</a>
+                    </li>
+                    <li>
+                        <a href="#"> Promoción</a>
+                    </li>
+                    <li>
+                        <a href="#"> Combos</a>
+                    </li>
+                    <li>
+                        <a href="#"> Bebidas</a>
+                    </li>
+                    <li>
+                        <a href="#"> Comidas</a>
+                    </li>
+                    <li>
+                        <a href="#"> Golosinas</a>
+                    </li>
+                </ol>
+            </section>
+            <aside>
+                <header id="carrito">
+                    <h2>Pedido</h2>
+                </header>
+                <ul type="none" class="pedidos">
+                    <li>
+                        <figure class="item pedido">
+                            <img
+                                src="recursos/hamburguesa.jpeg"
+                                width="260"
+                                height="180"
+                                alt="hamburguesa"
+                            >
+                            <figcaption class="descripcion">
+                                <h2>Hamburguesa</h2>
+                                <p>$8.99</p>
+                                <label for="cantidad-popcorn">Cantidad:</label>
+                                <input
+                                    type="number"
+                                    id="cantidad"
+                                    name="cantidad"
+                                    min="1"
+                                    value="1"
+                                >
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+                <footer id="pagar">
+                    <p>Total: $8.99</p>
+                    <a href="pagar.html"><button>Pagar</button></a>
+                </footer>
+            </aside>
+            <section class="items">
+                <figure class="item comida">
+                    <img
+                        src="recursos/palomitas.jpeg"
+                        width="260"
+                        height="180"
+                        alt="palomitas"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Palomitas simples (grandes)</h2>
+                        <p>$5.99</p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+                <figure class="item comida">
+                    <img
+                        src="recursos/palomitas_medianas.jpeg"
+                        width="260"
+                        height="180"
+                        alt="palomitas"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Palomitas simples (medianas)</h2>
+                        <p>$3.99</p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+                <figure class="item comida">
+                    <img
+                        src="recursos/palomitas_pequeñas.jpeg"
+                        width="260"
+                        height="180"
+                        alt="palomitas"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Palomitas simples (pequeñas)</h2>
+                        <p>$2.99</p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+                <figure class="item comida">
+                    <img
+                        src="recursos/hamburguesa.jpeg"
+                        width="260"
+                        height="180"
+                        alt="hamburguesa"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Hamburguesa</h2>
+                        <p>$8.99</p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+                <figure class="item comida">
+                    <img
+                        src="recursos/pollo.jpeg"
+                        width="280"
+                        height="180"
+                        alt="pollofrito"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Pollo frito</h2>
+                        <p>
+                            <s> $11.99</s> $8.99
+                        </p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+                <figure class="item comida">
+                    <img
+                        src="recursos/papas.jpeg"
+                        width="260"
+                        height="180"
+                        alt="papas"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Papas fritas</h2>
+                        <p>$3.99</p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+                <figure class="item combo">
+                    <img
+                        src="recursos/combo_mediano.jpeg"
+                        width="260"
+                        height="180"
+                        alt="combo"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Palomitas + Refresco (grandes)</h2>
+                        <p>$6.99</p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+                <figure class="item bebida">
+                    <img
+                        src="recursos/refresco.jpeg"
+                        width="200"
+                        height="300"
+                        alt="bebida"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Refresco (mediano)</h2>
+                        <p>$1.50</p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+                <figure class="item golosina">
+                    <img
+                        src="recursos/chocolate.jpeg"
+                        width="200"
+                        height="200"
+                        alt="golosina"
+                    >
+                    <figcaption class="descripcion">
+                        <h2>Chocolate (pequeño)</h2>
+                        <p>$0.99</p>
+                        <button class="agregar">+</button>
+                    </figcaption>
+                </figure>
+            </section>
+        </main>
+        <footer id="footer">
+            <p>&copy; 2024 Cinex Unidos. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>
