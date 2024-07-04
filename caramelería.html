@@ -2,28 +2,32 @@
 <html lang="es-VE">
 <head>
   <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="CSS/estilo_base.css">
+  <link rel="stylesheet" href="CSS/estilo_carameleria.css">
   <title>Caramelería</title>
 </head>
 <body>
-  <header>
+  <header class="header">
+    <section class="logo-cine">
+      <a href="index.html"><img src="recursos/logo.png" alt="Cinex Unidos" class="logo"></a>
+    </section>
     <nav class="principal">
       <ul>
-        <li><a href="index.html"> Cartelera </a></li>
-        <li><a href="proximamente.html"> Próximanente </a></li>
-        <li><a href="caramelería.html"> Caramelería </a></li>
-        <li><a href="cines.html"> Cines </a></li>
+        <li><a href='index.html'><img src="recursos\iconos\icono-peliculas.png" alt="Cartelera"><span>Cartelera</span></a></li>
+        <li><a href='proximamente.html'><img src="recursos\iconos\icono-proximamente.png" alt="Próximamente"><span>Próximamente</span></a></li>
+        <li><a href='caramelería.html'><img src="recursos\iconos\icono-palomitas.png" alt="Caramelería"><span>Caramelería</span></a></li>
+        <li><a href='cines.html'><img src="recursos\iconos\icono-boleto.png" alt="Cines"><span>Cines</span></a></li>
       </ul>
-    </nav>
-    <nav class="navegacion">
-      <h1><a href="index.html"> Cinex Unidos </a></h1>
     </nav>
   </header>
   <main>
-    <section>
+    <section class="buscador">
       <h1>Menú</h1>
-      <form id="buscador">
-        <input type="text" id="busqueda" class="buscar" placeholder="Buscar..."/>
-        <img src="recursos/lupa.png" width="20" height="20"/>
+      <form class="buscador">
+        <input type="text" id="busqueda" class="busqueda" placeholder=" ">
+        <label for="busqueda">Buscar...</label>
+        <img src="recursos/iconos/icono_lupa.png" alt="Buscar">
       </form>
       <ol class="filtros">
         <li><a href="#"> Todos </a></li>
@@ -100,7 +104,7 @@
       </figure>
     </section>
   </main>
-  <footer id="footer">
+  <footer class="footer">
     <p>&copy; 2024 Cinex Unidos. Todos los derechos reservados.</p>
   </footer>
 </body>

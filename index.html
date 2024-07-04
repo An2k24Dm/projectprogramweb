@@ -2,24 +2,16 @@
 <html lang="es-VE">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="CSS/estilo_index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="CSS/estilo_index.css">
+    <link rel="stylesheet" href="CSS\estilo_base.css">
+    <link rel="stylesheet" href="CSS/estilo_carrusel.css">
     <title>Cartelera</title>
 </head>
 <body>
     <header class="header">
         <section class="logo-cine">
             <a href="index.html"><img src="recursos/logo.png" alt="Cinex Unidos" class="logo"></a>
-        </section>
-        <section class="portada-contenedor">
-            <figure class="carrusel">
-                <img class="carrusel-item active" src="recursos/portadas/portada_intensamente2.jpg" alt="Portada Intensamente 2">
-                <img class="carrusel-item" src="recursos/portadas/portada_badboys.jpg" alt="Portada Bad Boys">
-                <img class="carrusel-item" src="recursos/portadas/portada_mivillanofavorito.jpg" alt="Portada Mi Villano Favorito">
-                <img class="carrusel-item" src="recursos/portadas/winniepooh_portada.jpg" alt="Portada Winnie the Pooh">
-                <figcaption class="carrusel-puntos"></figcaption>
-            </figure>
         </section>
         <nav class="principal">
             <ul>
@@ -29,12 +21,21 @@
                 <li><a href='cines.html'><img src="recursos\iconos\icono-boleto.png" alt="Cines"><span>Cines</span></a></li>
             </ul>
         </nav>
+        <section class="portada-contenedor">
+            <figure class="carrusel">
+                <img class="carrusel-item active" src="recursos/portadas/portada_intensamente2.jpg" alt="Portada Intensamente 2">
+                <img class="carrusel-item" src="recursos/portadas/portada_badboys.jpg" alt="Portada Bad Boys">
+                <img class="carrusel-item" src="recursos/portadas/portada_mivillanofavorito.jpg" alt="Portada Mi Villano Favorito">
+                <img class="carrusel-item" src="recursos/portadas/winniepooh_portada.jpg" alt="Portada Winnie the Pooh">
+                <figcaption class="carrusel-puntos"></figcaption>
+            </figure>
+        </section>
     </header>
     <main class="contenedor">
         <h1>Cartelera</h1>
         <section class="buscador">
             <form>
-                <input type="text" id="busqueda" class="busqueda" placeholder=" " required>
+                <input type="text" id="busqueda" class="busqueda" placeholder=" ">
                 <label for="busqueda">Buscar...</label>
                 <img src="recursos/iconos/icono_lupa.png" alt="Buscar">
             </form>
