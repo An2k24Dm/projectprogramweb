@@ -1,8 +1,8 @@
+/* Main */
 main.contenedor {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: #0f0c29;
     color: whitesmoke;
 }
 
@@ -10,17 +10,55 @@ main h1 {
     text-align: left;
     margin: 0px;
     margin-bottom: 25px;
-} 
+}
 
-/*Linea blancas*/
-.portada-contenedor::before{
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    opacity: 0.8;
-    background-color: #5c5656;
-    margin: 10px 0;
+/* Buscador */
+.buscador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0 20px;
+    flex-wrap: wrap;
+}
+
+.buscador form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.buscador input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    background: #24243e;
+    color: whitesmoke;
+    position: relative;
+    z-index: 1;
+}
+
+.buscador label[for="busqueda"] {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    background-color: transparent;
+    padding: 0 5px;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    z-index: 2;
+}
+
+.buscador input[type="text"]:focus + label[for="busqueda"],
+.buscador input[type="text"]:not(:placeholder-shown) + label[for="busqueda"] {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8em;
+    color: #ccc;
 }
 
 .buscador select {
@@ -29,7 +67,7 @@ main h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     color: whitesmoke;
-    background-color: #24243e; /* Color de fondo del select */
+    background-color: #24243e;
     position: relative;
     z-index: 1;
 }
@@ -40,10 +78,16 @@ main h1 {
     pointer-events: none;
 }
 
+.buscador img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Películas */
 .peliculas {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px; /* Aumentar el espacio entre las películas */
+    gap: 18px;
     justify-content: center;
 }
 
@@ -55,7 +99,7 @@ main h1 {
     padding: 0;
     cursor: pointer;
     width: 100%;
-    max-width: 270px; /* Tamaño estándar */
+    max-width: 270px;
 }
 
 .pelicula img {
@@ -65,7 +109,7 @@ main h1 {
 }
 
 .pelicula:hover {
-    transform: scale(1.05); /* Agranda toda la tarjeta */
+    transform: scale(1.05);
 }
 
 .pelicula .descripcion {
@@ -84,8 +128,133 @@ main h1 {
 }
 
 @media (max-width: 768px) {
-    .buscador select {
+    /* Carrusel */
+    .carrusel {
+        height: auto; /* Ajusta la altura automáticamente */
         width: 100%;
-        margin-bottom: 10px;
+    }
+
+    .carrusel-item {
+        flex: 0 0 100%;
+        height: auto; /* Ajusta la altura automáticamente */
+        object-fit: cover;
+    }
+
+    /* Menú Principal */
+    .principal ul {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .principal ul li {
+        flex: 1;
+        list-style: none;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .principal ul li a img {
+        transition: none; /* Eliminar animación */
+    }
+
+    .principal ul li a span {
+        transition: none; /* Eliminar animación */
+    }
+
+    /* Buscador */
+    .buscador {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .buscador form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .buscador input[type="text"] {
+        width: 150px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #24243e;
+        color: whitesmoke;
+        position: relative;
+        z-index: 1;
+    }
+
+    .buscador label[for="busqueda"] {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+        background-color: transparent;
+        padding: 0 5px;
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+        z-index: 2;
+    }
+
+    .buscador input[type="text"]:focus + label[for="busqueda"],
+    .buscador input[type="text"]:not(:placeholder-shown) + label[for="busqueda"] {
+        top: -10px;
+        left: 10px;
+        font-size: 0.8em;
+        color: #ccc;
+    }
+
+    .buscador img {
+        width: 24px;
+        height: 24px;
+        margin-left: -30px; /* Ajusta la posición de la lupa */
+        z-index: 3;
+    }
+
+    .buscador select {
+        width: 100px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #24243e;
+        color: whitesmoke;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Logo */
+    .logo {
+        width: 80px;
+    }
+
+    /* Menú Principal */
+    .principal ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .principal ul li a {
+        font-size: 0.8em;
+    }
+
+    .principal ul li a img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Buscador */
+    .buscador input[type="text"],
+    .buscador select {
+        width: auto;
+    }
+
+    .footer p {
+        font-size: 0.6em;
     }
 }
