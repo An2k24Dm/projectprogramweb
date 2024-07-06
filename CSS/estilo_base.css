@@ -96,3 +96,18 @@ footer.footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+    .principal ul {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .principal ul li {
+        flex: 1;
+        list-style: none;
+        justify-content: center;
+        margin: 0;
+    }
+}
