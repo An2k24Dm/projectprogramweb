@@ -17,7 +17,7 @@ function fetchTheatres() {
 
 function populateTheatres(theatres) {
     const theatresContainer = document.getElementById('theatres-container');
-    theatresContainer.innerHTML = ''; // Clear previous content
+    theatresContainer.innerHTML = '';
 
     if (theatres.length === 0) {
         theatresContainer.innerHTML = '<p>No theatres found.</p>';
