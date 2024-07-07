@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles de la Película</title>
+    <link rel="stylesheet" href="CSS/estilo_base.css">
     <link rel="stylesheet" href="CSS/estilo_infoPelicula.css">
 </head>
 <body>
-    <header>
-        <h1>Detalles de la Película</h1>
+    <header class="header">
+        <section class="logo-cine">
+            <a href="index.html"><img src="recursos/logo.png" alt="Cinex Unidos" class="logo"></a>
+        </section>
+        <nav class="principal">
+            <ul>
+                <li class="icono-regresar"><a href='index.html'><img src="recursos/icono_regresar.png" alt="Regresar"><span>Regresar</span></a></li>
+            </ul>
+        </nav>
+        <section class="portada"></section>
     </header>
-    <main>
+    <main class="contenedor">
         <section class="pelicula-detalles">
+            <h1>Detalles de la Película</h1>
             <img id="movie-poster" src="" alt="Poster de la película">
+            <p id="clase"></p>
             <h2 id="movie-title"></h2>
         </section>
         <section class="cine-detalles">
@@ -20,6 +31,9 @@
             <div id="theatres-list"></div>
         </section>
     </main>
+    <footer class="footer">
+        <p>&copy; 2024 Cinex Unidos. Todos los derechos reservados.</p>
+    </footer>
     <script src="JS/infoPelicula.js"></script>
 </body>
 </html>

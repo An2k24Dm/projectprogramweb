@@ -73,7 +73,7 @@ function displayMovieDetails(movieDetails) {
         theatre.auditoriums.forEach(auditorium => {
             const auditoriumInfo = document.createElement('div');
             auditoriumInfo.className = 'auditorium-info';
-            auditoriumInfo.textContent = `Sala: ${auditorium.auditoriumName}, Capacidad: ${auditorium.showtimes[0].capacity}`;
+            auditoriumInfo.textContent = `${auditorium.auditoriumName}, Capacidad: ${auditorium.showtimes[0].capacity}`;
             theatreSection.appendChild(auditoriumInfo);
 
             const showtimesList = document.createElement('ul');
