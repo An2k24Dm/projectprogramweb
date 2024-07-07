@@ -59,7 +59,7 @@
 
 .showtimes-list li {
     margin-top: 5px;
-    font-size: 0.9em; /* Reducir tamaño de fuente */
+    font-size: 0.9em;
     color: #fff;
     background: #444;
     padding: 10px;
@@ -68,7 +68,7 @@
 }
 
 .showtimes-list li:hover {
-    background: #ffd500; /* Cambiado de amarillo a un tono azul claro */
+    background: #ffd500;
     color: #000;
     transform: scale(1.05);
     cursor: pointer;
