@@ -181,6 +181,16 @@ footer.footer {
     height: 24px;
 }
 
+.portada::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    opacity: 0.8;
+    background-color: #5c5656;
+    margin: 10px 0;
+}
+
 @media (max-width: 768px) {
     .principal ul {
         flex-direction: row;
