@@ -2,9 +2,9 @@
 <html lang="es-VE">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="CSS\estilo_base.css">
+  <link rel="stylesheet" href="CSS/estilo_base.css">
+  <link rel="stylesheet" href="CSS/estilo_carameleria.css">
   <title>Caramelería</title>
 </head>
 <body>
@@ -20,27 +20,23 @@
         <li><a href='cines.html'><img src="recursos\iconos\icono-boleto.png" alt="Cines"><span>Cines</span></a></li>
       </ul>
     </nav>
-    <section class="portada"></section>
   </header>
-  <main class="contenedor">
-    <h1>Menú</h1>
+  <main>
     <section class="buscador">
+      <h1>Menú</h1>
       <form class="buscador">
         <input type="text" id="busqueda" class="busqueda" placeholder=" ">
         <label for="busqueda">Buscar...</label>
         <img src="recursos/iconos/icono_lupa.png" alt="Buscar">
       </form>
-      <form>
-        <label for="filtro">Filtrar</label>
-        <select class="filtro" name="filtro" id="filtro">
-            <option value="todas">Todas</option>
-            <option value="populares">Promoción</option>
-            <option value="recientes">Combos</option>
-            <option value="populares">Bebidas</option>
-            <option value="recientes">Comidas</option>
-            <option value="populares">Golosinas</option>
-        </select>
-      </form>
+      <ol class="filtros">
+        <li><a href="#"> Todos </a></li>
+        <li><a href="#"> Promoción </a></li>
+        <li><a href="#"> Combos </a></li>
+        <li><a href="#"> Bebidas </a></li>
+        <li><a href="#"> Comidas </a></li>
+        <li><a href="#"> Golosinas </a></li>
+      </ol>
     </section>
     <section class="items">
       <figure class="item comida">
