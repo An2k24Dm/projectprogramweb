@@ -1,23 +1,98 @@
-main.contenedor {
-    padding: 20px;
-    text-align: center;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+
 }
 
-.cine-detalle {
-    margin-bottom: 20px;
+/* Body */
+body {
+    padding: 0;
+    color: #fffbfb;
+    line-height: 1.2
 }
 
-.cine-detalle img {
+.ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.ul li {
+    margin: 0 1px;
+}
+
+.ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ul li a img {
+    max-width: 30px;
+    margin-bottom: 5px;
+}
+
+/* Main container */
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Theatre details */
+.theatre-details {
+    margin-bottom: 30px;
+}
+
+.theatre-details h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.theatre-details p {
+    font-size: 1.2em;
+    color: #777;
+}
+
+/* Movie grid */
+.peliculas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Movie card */
+.pelicula {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.pelicula:hover {
+    transform: translateY(-10px);
+}
+
+.pelicula img {
     width: 100%;
-    height: 300px; /* Ajustar altura de las imágenes */
-    object-fit: cover; /* Mantener proporciones de la imagen */
+    height: auto;
+    display: block;
 }
 
-.showtime-detalle {
-    background-color: #24243e;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px 0;
-    color: whitesmoke;
-    text-align: left;
+.pelicula h3 {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+.pelicula p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 10px;
 }

@@ -1,78 +1,94 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Obtener el ID del cine desde la URL
     const urlParams = new URLSearchParams(window.location.search);
-    const theatreId = urlParams.get('theatre');
+    const theatreId = urlParams.get('theatre'); // Obtener el parámetro 'theatre' de la URL
+    
     if (theatreId) {
-        fetchTheatreDetails(theatreId);
+        fetchTheatreDetails(theatreId); // Llamar a fetchTheatreDetails con el ID del cine
+    } else {
+        console.error('Error: No se proporcionó un ID de cine.');
     }
 });
 
+// Función asincrónica para obtener y mostrar los detalles del cine y sus películas
 async function fetchTheatreDetails(theatreId) {
     try {
+        // Obtener detalles del cine específico
         const theatreResponse = await fetch(`https://cinexunidos-production.up.railway.app/theatres/${theatreId}`);
         if (!theatreResponse.ok) throw new Error('Error al obtener detalles del cine');
         const theatre = await theatreResponse.json();
+        console.log('Cine:', theatre);
+
+        // Mostrar detalles del cine en la página
         populateTheatreDetails(theatre);
-        fetchAuditoriums(theatreId);
+
+        // Iterar sobre cada sala y sus funciones para obtener todas las películas
+        theatre.auditoriums.forEach(auditorium => {
+            auditorium.showtimes.forEach(showtime => {
+                const movieElement = createMovieElement(showtime.movie, showtime.startTime, auditorium);
+                document.querySelector('.peliculas').appendChild(movieElement);
+            });
+        });
     } catch (error) {
         console.error('Error al obtener la información del cine:', error);
     }
 }
 
+// Función para poblar los detalles del cine en la página
 function populateTheatreDetails(theatre) {
-    const container = document.getElementById('cine-detalle-container');
-    const theatreElement = document.createElement('div');
-    theatreElement.classList.add('cine-detalle');
-    theatreElement.innerHTML = `
-        <h2>${theatre.name}</h2>
-        <p>${theatre.location}</p>
-        <img src="recursos/cines/${theatre.id}.jpg" alt="${theatre.name}">
-    `;
-    container.appendChild(theatreElement);
+    const container = document.querySelector('#cine-detalle');
+    const theatreDetails = document.createElement('div');
+    theatreDetails.className = 'theatre-details';
+
+    const theatreName = document.createElement('h1');
+    theatreName.textContent = theatre.name;
+
+    const theatreLocation = document.createElement('p');
+    theatreLocation.textContent = theatre.location;
+
+    theatreDetails.appendChild(theatreName);
+    theatreDetails.appendChild(theatreLocation);
+    container.appendChild(theatreDetails);
 }
 
-async function fetchAuditoriums(theatreId) {
-    try {
-        const auditoriumsResponse = await fetch(`https://cinexunidos-production.up.railway.app/theatres/${theatreId}/auditoriums`);
-        if (!auditoriumsResponse.ok) throw new Error('Error al obtener las salas del cine');
-        const auditoriums = await auditoriumsResponse.json();
-        const allShowtimes = await fetchShowtimes(theatreId, auditoriums);
-        populateShowtimes(allShowtimes);
-    } catch (error) {
-        console.error('Error al obtener las salas del cine:', error);
-    }
-}
+// Función para crear un elemento HTML que representa una película
+function createMovieElement(movie, startTime, auditorium) {
+    const movieContainer = document.createElement('figure');
+    movieContainer.className = 'pelicula';
 
-async function fetchShowtimes(theatreId, auditoriums) {
-    const allShowtimes = [];
-    for (const auditorium of auditoriums) {
-        try {
-            const showtimesResponse = await fetch(`https://cinexunidos-production.up.railway.app/theatres/${theatreId}/auditoriums/${auditorium.id}/showtimes`);
-            if (!showtimesResponse.ok) throw new Error('Error al obtener las funciones de una sala');
-            const showtimes = await showtimesResponse.json();
-            showtimes.forEach(showtime => {
-                allShowtimes.push({
-                    movie: showtime.movie,
-                    startTime: showtime.startTime,
-                    auditoriumName: auditorium.name
-                });
-            });
-        } catch (error) {
-            console.error('Error al obtener las funciones de una sala:', error);
-        }
-    }
-    return allShowtimes;
-}
+    const movieImage = document.createElement('img');
+    movieImage.src = `https://cinexunidos-production.up.railway.app/${movie.poster}`;
+    movieImage.alt = movie.name;
 
-function populateShowtimes(showtimes) {
-    const container = document.getElementById('cine-detalle-container');
-    showtimes.forEach(showtime => {
-        const showtimeElement = document.createElement('div');
-        showtimeElement.classList.add('showtime-detalle');
-        showtimeElement.innerHTML = `
-            <h3>${showtime.movie ? showtime.movie.title : 'Título no disponible'}</h3>
-            <p>Hora: ${showtime.startTime ? new Date(showtime.startTime).toLocaleTimeString() : 'Hora no disponible'}</p>
-            <p>Sala: ${showtime.auditoriumName}</p>
-        `;
-        container.appendChild(showtimeElement);
+    const movieTitle = document.createElement('h3');
+    movieTitle.textContent = movie.name;
+
+    const movieStartTime = document.createElement('p');
+    movieStartTime.textContent = `Hora de inicio: ${startTime}`;
+
+    const movieDuration = document.createElement('p');
+    movieDuration.textContent = `Duración: ${movie.runningTime}`;
+
+    const movieRating = document.createElement('p');
+    movieRating.textContent = `Clasificación: ${movie.rating}`;
+
+    const movieAuditorium = document.createElement('p');
+    movieAuditorium.textContent = `Sala: ${auditorium.name}`;
+
+    const movieCapacity = document.createElement('p');
+    movieCapacity.textContent = `Capacidad de la sala: ${auditorium.capacity}`;
+
+    movieContainer.appendChild(movieImage);
+    movieContainer.appendChild(movieTitle);
+    movieContainer.appendChild(movieStartTime);
+    movieContainer.appendChild(movieDuration);
+    movieContainer.appendChild(movieRating);
+    movieContainer.appendChild(movieAuditorium);
+    movieContainer.appendChild(movieCapacity);
+
+    movieContainer.addEventListener('click', () => {
+        window.location.href = `infopelicula.html?id=${movie.id}`;
     });
+
+    return movieContainer;
 }
