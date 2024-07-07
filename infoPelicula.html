@@ -1,39 +1,25 @@
 <!DOCTYPE html>
-<html lang="es-VE">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Informacion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Película</title>
+    <link rel="stylesheet" href="CSS/estilo_infoPelicula.css">
 </head>
 <body>
     <header>
-        <nav class="navegacion">
-            <div class="principal">
-                <h1><a href="index.html">CinexUnidos</a></h1>
-            </div>
-            <div class="secundario">
-                <a href="index.html"><button>Regresar</button></a>
-            </div>
-        </nav>
+        <h1>Detalles de la Película</h1>
     </header>
     <main>
-        <section>
-            <h1>Detalles de la película</h1>
-            <figure class="pelicula">
-                <img src="recursos\posters\planeta.jpg" alt="Imagen de la película" width="450" height="300">
-                <figcaption class="descripcion">
-                    <h2>El Reino del Planeta De los Simios</h2>
-                    <h3>Trailer</h3>
-                    <button><img src="recursos/playbutton.png" width="30" height="30" alt="Reproducir"> </button>
-                    <p>Muchos años después del reinado de César, un joven simio emprende un viaje que lo llevará a
-                        cuestionar todo lo que le han enseñado sobre el pasado y a tomar decisiones que definirán el
-                        futuro tanto para los simios como para los humanos.</p>
-                    <a href="asientos.html"><button> Compra<img src="recursos/icono-compra.png" width="15" height="10" alt="Compra"> </button></a>
-                </figcaption>
-            </figure>
+        <section class="pelicula-detalles">
+            <img id="movie-poster" src="" alt="Poster de la película">
+            <h2 id="movie-title"></h2>
+        </section>
+        <section class="cine-detalles">
+            <h3>Cines que proyectan esta película</h3>
+            <div id="theatres-list"></div>
         </section>
     </main>
-    <footer id="footer">
-        <p>&copy; 2024 Cinex Unidos. Todos los derechos reservados.</p>
-    </footer>
+    <script src="JS/infoPelicula.js"></script>
 </body>
 </html>

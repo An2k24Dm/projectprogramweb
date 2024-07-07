@@ -1,0 +1,92 @@
+/* Estilos para la página de asientos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+#movie-details {
+    width: 50%;
+    margin-right: 20px;
+    text-align: center;
+    /* Centra el contenido */
+}
+
+#movie-details img.movie-poster {
+    display: block;
+    margin: 10px auto;
+    /* Ajusta el margen para una mejor separación */
+    max-width: 50%;
+    height: auto;
+}
+
+#seat-map {
+    width: 50%;
+}
+
+.seat-map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seat-label {
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.seat {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+}
+
+.seat-free {
+    background-color: lightgray;
+    cursor: pointer;
+    /* Cambia el cursor a mano */
+}
+
+.seat-selected {
+    background-color: yellow;
+    cursor: pointer;
+    /* Cambia el cursor a mano */
+}
+
+.seat-occupied {
+    background-color: red;
+}
+
+.seat-empty {
+    /* Este estilo se deja vacío para no mostrar el asiento */
+}
+
+/* Alineación específica para la fila de etiquetas */
+.seat-labels .seat-label {
+    line-height: 20px;
+}
