@@ -1,27 +1,19 @@
-/* Estilos para la página de asientos */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
 main {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+}
+
+h1 {
+    color: yellow;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #movie-details {
     width: 50%;
-    margin-right: 20px;
+    margin-bottom: 20px;
     text-align: center;
     /* Centra el contenido */
 }
@@ -36,6 +28,7 @@ main {
 
 #seat-map {
     width: 50%;
+    margin-bottom: 20px;
 }
 
 .seat-map-container {
@@ -89,4 +82,39 @@ main {
 /* Alineación específica para la fila de etiquetas */
 .seat-labels .seat-label {
     line-height: 20px;
+}
+
+.boton.reservar {
+    background-color: #1f1f36;
+    color: whitesmoke;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.boton.reservar:hover {
+    background-color: rgb(137, 137, 43);
+    transform: scale(1.05);
+}
+
+nav.principal {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 0;
+    background: linear-gradient(to bottom, #0c0926, #1f1f36, #0c0926);
+}
+
+.principal ul {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.principal ul li {
+    list-style: none;
+    margin-right: 700px;
 }

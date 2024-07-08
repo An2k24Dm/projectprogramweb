@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selección de Asientos</title>
+    <link rel="stylesheet" href="CSS/estilo_base.css">
     <link rel="stylesheet" href="CSS/estilo_asientos.css">
 </head>
 <body>
-    <header>
-        <h1>Selección de Asientos</h1>
+    <header class="header">
+        <section class="logo-cine">
+            <a href="index.html"><img src="recursos/logo.png" alt="Cinex Unidos" class="logo"></a>
+        </section>
+        <nav class="principal">
+            <ul>
+                <li class="icono-regresar"><a href="index.html"><img src="recursos/icono_regresar.png" alt="Regresar"><span>Regresar</span></a></li>
+            </ul>
+        </nav>
+        <section class="portada"></section>
     </header>
     <main>
-        <section id="movie-details">
-            <!-- Aquí se mostrarán los detalles de la película -->
-        </section>
-        <div id="seat-map" class="seat-map-container">
-            <!-- Aquí se dibujarán dinámicamente los asientos -->
-            <div id="seat-labels" class="seat-labels">
-                <!-- Las etiquetas de las columnas se añadirán aquí -->
+        <section id="movie-details"></section>
+        <h1>Selección de asientos</h1>
+        <form action="index.html"></form>
+            <div id="seat-map" class="seat-map-container">
+                <div id="seat-labels" class="seat-labels"></div>
+                <div id="seat-rows"></div>
             </div>
-            <div id="seat-rows">
-                <!-- Las filas y asientos se añadirán aquí -->
+            <div class="botones">
+                <button type="submit" class="boton reservar">Reservar asientos</button>
             </div>
-        </div>
+        </form>
     </main>
     <script src="JS/asientos.js"></script>
 </body>

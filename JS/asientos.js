@@ -1,3 +1,5 @@
+let selectedSeats = [];
+
 // Función para obtener los detalles de la función desde la API
 async function fetchShowtimeDetails(theatreId, auditoriumId, showtimeId) {
     try {
@@ -130,28 +132,49 @@ async function cancelReservation(theatreId, auditoriumId, showtimeId, seat) {
 
 // Función para alternar la selección de un asiento
 async function toggleSeatSelection(seatElement, seats, rowKey, seatIndex) {
+    const seat = `${rowKey}${seatIndex}`;
+
+    if (seatElement.classList.contains('seat-free')) {
+        seatElement.classList.remove('seat-free');
+        seatElement.classList.add('seat-selected');
+        selectedSeats.push(seat);
+        seats[rowKey][seatIndex] = 1;
+    } else if (seatElement.classList.contains('seat-selected')) {
+        seatElement.classList.remove('seat-selected');
+        seatElement.classList.add('seat-free');
+        selectedSeats = selectedSeats.filter(s => s !== seat);
+        seats[rowKey][seatIndex] = 0;
+    }
+}
+
+document.querySelector('.boton.reservar').addEventListener('click', async (event) => {
+    event.preventDefault();
+    if (selectedSeats.length === 0) {
+        alert('Por favor, seleccione al menos un asiento.');
+        return;
+    }
+
     const params = new URLSearchParams(window.location.search);
     const theatreId = params.get('theatreId');
     const auditoriumId = params.get('auditoriumId');
     const showtimeId = params.get('showtimeId');
-    const seat = `${rowKey}${seatIndex}`;
 
-    if (seatElement.classList.contains('seat-free')) {
+    let allSuccessful = true;
+    for (const seat of selectedSeats) {
         const success = await reserveSeat(theatreId, auditoriumId, showtimeId, seat);
-        if (success) {
-            seatElement.classList.remove('seat-free');
-            seatElement.classList.add('seat-selected');
-            seats[rowKey][seatIndex] = 1;
-        }
-    } else if (seatElement.classList.contains('seat-selected')) {
-        const success = await cancelReservation(theatreId, auditoriumId, showtimeId, seat);
-        if (success) {
-            seatElement.classList.remove('seat-selected');
-            seatElement.classList.add('seat-free');
-            seats[rowKey][seatIndex] = 0;
+        if (!success) {
+            allSuccessful = false;
+            break;
         }
     }
-}
+
+    if (allSuccessful) {
+        alert('Asientos reservados exitosamente.');
+        window.location.href = 'index.html';
+    } else {
+        alert('Hubo un problema al reservar uno o más asientos.');
+    }
+});
 
 // Función de inicialización
 async function init() {
