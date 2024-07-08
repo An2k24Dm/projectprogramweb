@@ -39,13 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
         movieImage.src = `https://cinexunidos-production.up.railway.app/${movie.poster}`;
         movieImage.alt = movie.name;
 
+        const descripcion = document.createElement('figcaption');
+        descripcion.className = 'descripcion';
         // Crear un título <h3> con el nombre de la película
-        const movieTitle = document.createElement('h3');
+        const movieTitle = document.createElement('h2');
         movieTitle.textContent = movie.name;
-
+        descripcion.appendChild(movieTitle);
         // Agregar la imagen y el título al contenedor <figure>
         movieContainer.appendChild(movieImage);
-        movieContainer.appendChild(movieTitle);
+        movieContainer.appendChild(descripcion);
 
         // Agregar un evento de clic para redirigir al usuario a la página de información de la película
         movieContainer.addEventListener('click', () => {
