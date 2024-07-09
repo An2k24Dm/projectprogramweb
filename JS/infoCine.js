@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Obtener el ID del cine desde la URL
     const urlParams = new URLSearchParams(window.location.search);
     const theatreId = urlParams.get('theatre'); // Obtener el parámetro 'theatre' de la URL
-    
+
     if (theatreId) {
         fetchTheatreDetails(theatreId); // Llamar a fetchTheatreDetails con el ID del cine
     } else {
@@ -25,7 +25,7 @@ async function fetchTheatreDetails(theatreId) {
         // Iterar sobre cada sala y sus funciones para obtener todas las películas
         theatre.auditoriums.forEach(auditorium => {
             auditorium.showtimes.forEach(showtime => {
-                const movieElement = createMovieElement(showtime.movie, showtime.startTime, auditorium);
+                const movieElement = createMovieElement(showtime.movie, showtime.startTime, auditorium, theatreId, auditorium.id, showtime.id);
                 document.querySelector('.peliculas').appendChild(movieElement);
             });
         });
@@ -52,7 +52,7 @@ function populateTheatreDetails(theatre) {
 }
 
 // Función para crear un elemento HTML que representa una película
-function createMovieElement(movie, startTime, auditorium) {
+function createMovieElement(movie, startTime, auditorium, theatreId, auditoriumId, showtimeId) {
     const movieContainer = document.createElement('figure');
     movieContainer.className = 'pelicula';
 
@@ -86,9 +86,19 @@ function createMovieElement(movie, startTime, auditorium) {
     movieContainer.appendChild(movieAuditorium);
     movieContainer.appendChild(movieCapacity);
 
+    // Evento click para redirigir a la página de asientos
     movieContainer.addEventListener('click', () => {
-        window.location.href = `infopelicula.html?id=${movie.id}`;
+        redirectToSeatsPage(theatreId, auditoriumId, showtimeId);
     });
 
     return movieContainer;
+}
+
+// Función para redirigir a la página de asientos
+function redirectToSeatsPage(theatreId, auditoriumId, showtimeId) {
+    // Construir la URL con los parámetros necesarios
+    const seatsUrl = `asientos.html?theatreId=${encodeURIComponent(theatreId)}&auditoriumId=${encodeURIComponent(auditoriumId)}&showtimeId=${encodeURIComponent(showtimeId)}`;
+    console.log('Redirigiendo a:', seatsUrl); // Añadir consola para depuración
+    // Redirigir al usuario a la página de asientos
+    window.location.href = seatsUrl;
 }

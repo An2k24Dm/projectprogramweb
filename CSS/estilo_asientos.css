@@ -26,49 +26,49 @@ h1 {
     height: auto;
 }
 
-#seat-map {
-    width: 50%;
-    margin-bottom: 20px;
-}
-
-.seat-map-container {
+.seat-map {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .seat-row {
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.seat-labels .seat-label {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
 }
 
 .seat-label {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 2px;
     text-align: center;
-    line-height: 20px;
+    line-height: 30px;
     font-weight: bold;
 }
 
 .seat {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin: 2px;
 }
 
 .seat-free {
     background-color: lightgray;
     cursor: pointer;
-    /* Cambia el cursor a mano */
 }
 
 .seat-selected {
     background-color: yellow;
     cursor: pointer;
-    /* Cambia el cursor a mano */
 }
 
 .seat-occupied {
@@ -76,8 +76,10 @@ h1 {
 }
 
 .seat-empty {
-    /* Este estilo se deja vacío para no mostrar el asiento */
+    background: transparent;
+    pointer-events: none;
 }
+
 
 /* Alineación específica para la fila de etiquetas */
 .seat-labels .seat-label {
@@ -117,4 +119,30 @@ nav.principal {
 .principal ul li {
     list-style: none;
     margin-right: 700px;
+}
+
+.seat-preselected {
+    background-color: rgb(243, 243, 148);
+    pointer-events: none;
+}
+
+#seat-legend {
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.legend-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 0.8em;
+    margin-bottom: 80px;
+    /* Tamaño de letra más pequeño */
+}
+
+.legend-item span {
+    margin-top: 5px;
+    /* Espacio entre el asiento y el texto */
 }

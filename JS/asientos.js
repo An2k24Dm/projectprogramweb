@@ -35,17 +35,20 @@ function displaySeatMap(seats) {
     const seatLabelsContainer = document.createElement('div');
     seatLabelsContainer.className = 'seat-row seat-labels';
 
+    // Obtener la cantidad máxima de columnas
+    const firstRow = Object.keys(seats)[0];
+    const numColumns = seats[firstRow].length;
+
     // Agregar etiquetas de columna
-    const firstRow = seats[Object.keys(seats)[0]];
-    const numColumns = firstRow.length;
-    for (let i = 0; i <= numColumns; i++) {
+    const columnHeader = document.createElement('span');
+    columnHeader.className = 'seat-label';
+    columnHeader.textContent = ' ';
+    seatLabelsContainer.appendChild(columnHeader);
+
+    for (let i = 0; i < numColumns; i++) {
         const seatLabel = document.createElement('span');
         seatLabel.className = 'seat-label';
-        if (i === 0) {
-            seatLabel.textContent = ' ';
-        } else {
-            seatLabel.textContent = String(i - 1);
-        }
+        seatLabel.textContent = i;
         seatLabelsContainer.appendChild(seatLabel);
     }
 
@@ -63,7 +66,6 @@ function displaySeatMap(seats) {
 
         seats[rowKey].forEach((seat, index) => {
             const seatElement = document.createElement('div');
-            const seatId = rowKey + index;
 
             switch (seat) {
                 case -1:
@@ -74,8 +76,8 @@ function displaySeatMap(seats) {
                     seatElement.addEventListener('click', () => toggleSeatSelection(seatElement, seats, rowKey, index));
                     break;
                 case 1:
-                    seatElement.className = 'seat seat-selected';
-                    seatElement.addEventListener('click', () => toggleSeatSelection(seatElement, seats, rowKey, index));
+                    seatElement.className = 'seat seat-preselected';
+                    seatElement.addEventListener('click', () => alert('Ya otro usuario tiene seleccionado este asiento'));
                     break;
                 case 2:
                     seatElement.className = 'seat seat-occupied';
