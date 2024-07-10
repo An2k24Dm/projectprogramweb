@@ -7,22 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!theatresResponse.ok) throw new Error('Error al obtener los cines');
             const theatres = await theatresResponse.json();
             console.log('Cines:', theatres);
-
             // Obtener todas las películas proyectadas en todos los cines
             const movies = theatres.flatMap(theatre =>
                 theatre.auditoriums.flatMap(auditorium =>
                     auditorium.showtimes.map(showtime => showtime.movie)
                 )
             );
-
             // Eliminar películas duplicadas utilizando un Map
             const uniqueMovies = [...new Map(movies.map(movie => [movie.id, movie])).values()];
-
-            // Iterar sobre cada película única y mostrarla en la página
-            uniqueMovies.forEach(movie => {
-                const movieElement = createMovieElement(movie);
-                document.querySelector('.peliculas').appendChild(movieElement);
-            });
+            mostrarPeliculas(uniqueMovies);
         } catch (error) {
             console.error('Error al obtener la información:', error);
         }
@@ -55,6 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         return movieContainer;
+    }
+
+    function mostrarPeliculas(peliculas) {
+        const peliculasContainer = document.querySelector('.peliculas');
+        peliculasContainer.innerHTML = '';
+        peliculas.forEach(pelicula => {
+            const elemento = createMovieElement(pelicula);
+            peliculasContainer.appendChild(elemento);
+        });
     }
 
     // Llamar a la función fetchMovies() para iniciar la obtención y visualización de películas
