@@ -1,0 +1,65 @@
+.contenedor h1{
+    display: flex;
+    text-align: center;
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.items h3 {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.items figure {
+    margin: 0.5rem;
+    background-color: #1f1f36;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.items figure:hover {
+    transform: scale(1.05);
+}
+
+.items img {
+    width: 100%;
+    height: auto;
+}
+
+.items .descripcion {
+    padding: 10px;
+    color: whitesmoke;
+}
+
+.items .descripcion h2 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+}
+
+.items .descripcion p {
+    font-size: 1em;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .items figure {
+        width: 90%;
+    }
+}
